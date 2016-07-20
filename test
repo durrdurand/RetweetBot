@@ -1,0 +1,28 @@
+var mockingjay = require('mockingjay');
+
+var opts = {
+  list_owner: "durdurand",
+  list_name: "Tech",
+  count: 200, 
+    regex: "(Pokemon|Pokémon|Twitter|VR|)",
+  credentials: {
+    consumer_key: "7T9ouQHAuQAA4JcWLO7y180rI",
+    consumer_secret:"0yAeYVWNXiUeimOeCQPuhKTFhrXZbsOCu9zKwcxWWNUdzRS2qT",
+    access_token:"404399339-dizNSH6Lu4rNSjCpAybnW0yEjNNgBx54cIKqoCMj",
+    access_token_secret:"2cfLIaGCGJDyCr4ipdCaTxfn5VTDpOQtZH1bY0thn3soW"
+  },
+  bot_name: "MadBot"
+};
+
+mockingjay.retweet(opts, function(err, result){
+  if (!err){
+    console.log(result)
+    /*{
+      "retweeted_matches": true,
+      "since_last": 20,
+      "matching": 5
+    }*/
+  }else{
+    console.log(err)
+  }
+});
